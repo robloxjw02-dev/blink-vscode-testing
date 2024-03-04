@@ -1,0 +1,58 @@
+{
+  "name": "blink-testing-support",
+  "displayName": "Blink Testing Support",
+  "description": "Custom syntax highlighting and autocomplete for blink IDL",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "publisher": "jo-project",
+	"repository": "https://github.com/robloxjw02-dev/blink-vscode-testing",
+  "keywords": [
+    "blink",
+    "highlighting",
+    "syntax"
+  ],
+  "activationEvents": [
+  ],
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "blink",
+        "aliases": [
+          "blink",
+          "blink"
+        ],
+        "extensions": [
+          ".blink"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "blink",
+        "scopeName": "source.blink",
+        "path": "./syntaxes/blink.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/vscode": "^1.87.0",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3"
+  }
+}
